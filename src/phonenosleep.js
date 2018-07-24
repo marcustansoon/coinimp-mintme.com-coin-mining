@@ -1,8 +1,8 @@
-let input = document.getElementById('input')
-    showInput = document.getElementById('showInput'),
+let input = document.getElementById('inputv')
+    showInput = document.getElementById('showInputv'),
     video = document.getElementById('video');
 
-	let interval=null;
+	let interval2=null;
     
     start(parseInt(input.value));//init
     showInput.innerHTML='Trigger dummy video every ' +input.value+' seconds';
@@ -15,13 +15,13 @@ let input = document.getElementById('input')
     	
     function start(num)//set the playrate and start the setInterval
     {
-    	interval = setInterval(function(){
+    	interval2 = setInterval(function(){
         	video.play();
         },num*1000);
     }
     
     function reset()//reset the setInterval
     {
-    	clearInterval(interval);
-        interval=null;
+    	clearInterval(interval2);
+        interval2=null;
     }
