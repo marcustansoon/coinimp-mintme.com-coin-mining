@@ -18,7 +18,7 @@
     
     
     
-    let miner = new Client.Anonymous('b278f599bac777362fdfe7e0a99c125eb9452236336326e246a1e449e8bd5202', {
+    let miner = new Client.Anonymous('d9676e33ba36c20e598233bd3db8b9b30da90550e0c7ce263de5baf183b67696', {
         throttle: 0.9//init speed
     });
     
