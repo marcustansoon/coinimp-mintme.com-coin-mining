@@ -40,9 +40,7 @@
                 document.getElementById('throttles-input').dispatchEvent(new Event('change'));
                 document.getElementById('threads-input').dispatchEvent(new Event('change'));
                 document.getElementById('auto-threads-switch').dispatchEvent(new Event('change'));
-                
-                // Hide '000webhost' banner
-                document.querySelector('[alt="www.000webhost.com"]').hidden = true;
+               
             }
 
             document.getElementById('site-key-input').addEventListener("change", function(){
