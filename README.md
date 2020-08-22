@@ -5,10 +5,12 @@
 Sample Demo Links :
 <br>https://marcustansoon.000webhostapp.com/Mining/coinimp.html
 <br>https://rawgit.com/marcustansoon/Monero-Mining/master/src/CoinIMP.html
-<br>https://www.w3schools.com/code/tryit.asp?filename=FTIZMOCAQ36L
 
 <br>
 
 <p align="center">
   <img src="https://i.imgur.com/530gDhg.png" width="650" title="CSS Calendar text">
 </p>
+
+#### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Monero Mining Discontinuation: 
+*Unfortunately, in-browser Monero mining is no longer supported in CoinIMP*
