@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta content="initial-scale=1, shrink-to-fit=no, width=device-width" name="viewport">
+        <!-- CSS -->
+        <!-- Add Material font (Roboto) and Material icon as needed -->
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i|Roboto+Mono:300,400,700|Roboto+Slab:300,400,700" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!-- Add Material CSS, replace Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/daemonite-material@4.1.1/css/material.min.css" rel="stylesheet">
+        <style type="text/css">
+        .log{
+            
+        }
+        @media (max-width:575px){
+            .log {
+                max-width: 250px;
+            }
+        }
+        </style>
+    </head>
+    <body class="">
+        <div class="container">
+            <div class="text-center" style="padding-top: 2%;">
+                <a href="https://www.coinimp.com/" target="_blank">
+                    <img src="https://i.imgur.com/ZHt5VtE.png" style="width: 100%;max-width: 150px;">
+                    <img src="https://i.imgur.com/XBv9GW3.png">
+                </a>
+            </div>
+            <div class="d-flex align-items-center body" style="">
+                <div class="row">
+                    <div class="col-lg-7">
+                        <div class="card">
+                            <div class="card-header bg-info">
+                                <h4 class="text-light text-center">Mining Summary</h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-4 col-sm-6">
+                                        <ul class="list-group list-group-flush">
+                                            <li class="list-group-item btn text-info">Hashes/Sec</li>
+                                            <li class="list-group-item btn" id="hashes-rate">0</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-4 col-sm-6">
+                                        <ul class="list-group list-group-flush">
+                                            <li class="list-group-item btn text-info">Avg. Hashes/Sec</li>
+                                            <li class="list-group-item btn" id="average-hashes-rate">0</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-4 col-sm-6">
+                                        <ul class="list-group list-group-flush">
+                                            <li class="list-group-item btn text-info">Total Hashes</li>
+                                            <li class="list-group-item btn" id="total-hashes">0</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-4 col-sm-6">
+                                        <ul class="list-group list-group-flush">
+                                            <li class="list-group-item btn text-info">Throttle</li>
+                                            <li class="list-group-item btn" id="throttles">0</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-4 col-sm-6">
+                                        <ul class="list-group list-group-flush">
+                                            <li class="list-group-item btn text-info">Threads</li>
+                                            <li class="list-group-item btn" id="threads">0</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-4 col-sm-6">
+                                        <ul class="list-group list-group-flush">
+                                            <li class="list-group-item btn text-info" >Max Threads</li>
+                                            <li class="list-group-item btn" id="max-threads">0</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-4 col-sm-6">
+                                        <ul class="list-group list-group-flush">
+                                            <li class="list-group-item btn text-info" >Mobile</li>
+                                            <li class="list-group-item btn" id="is-mobile">-</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-4 col-sm-6">
+                                        <ul class="list-group list-group-flush">
+                                            <li class="list-group-item btn text-info" >WASM</li>
+                                            <li class="list-group-item btn" id="has-wasm">-</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-4 col-sm-6">
+                                        <ul class="list-group list-group-flush">
+                                            <li class="list-group-item btn text-info" >Status</li>
+                                            <li class="list-group-item btn" id="status">-</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col">
+                                        <ul class="list-group list-group-flush">
+                                            <li class="list-group-item btn text-info" >Log</li>
+                                            <li class="list-group-item btn" id="log" style="overflow: auto;max-width: 80vw;">-</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-5">
+                        <div class="card">
+                            <div class="card-header bg-info">
+                                <h4 class="text-light text-center">Control Panel</h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label for="site-key-input">Site Key</label>
+                                            <input type="text" class="form-control" id="site-key-input" aria-describedby="" placeholder="Enter site key" placeholder="eg. d9676e33ba36c20e598233bd3db">
+                                            <small id="site-key-description" class="form-text text-muted">We'll never share your site key with anyone else.</small>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="throttles-input">Throttle</label>
+                                            <input type="range" class="form-control-range" id="throttles-input" min="0" max="1" step="0.1">
+                                            <small id="throttles-input-description" class="form-text text-muted">0</small>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="threads-input">Threads</label>
+                                            <select id="threads-input" class="form-control">
+                                            </select>
+                                        </div>
+                                        <div>
+                                            <div class="custom-control custom-switch">
+                                                <input class="custom-control-input" id="auto-threads-switch" type="checkbox">
+                                                <span class="custom-control-track"></span>
+                                                <label class="custom-control-label" for="auto-threads-switch">Enable auto threads</label>
+                                            </div>
+                                        </div>
+                                        <br>
+                                        <div class="form-group">
+                                            <button class="btn btn-info" id="mining-btn">Start Mining</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <a href="https://github.com/marcustansoon/CoinIMP-MintMe.com-COIN-Mining" target="_blank"><img src="https://i.imgur.com/veTO0SA.png" style="width: 25px;float: right;"></a>
+                                <a href="https://www.coinimp.com/documentation" target="_blank">Documentation</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript" src="https://raw.githack.com/jfriend00/docReady/master/docready.js"></script>
+
+        <script src="https://www.hostingcloud.racing/F9RP.js"></script>
+        <script type="text/javascript">
+            var miner = new Client.Anonymous('', {
+                throttle: 0, c: 'w', ads: 0
+            }),
+            isRunning = false,
+            intervalReference = setInterval(function(){
+                if(!isRunning){
+                    return;
+                }
+                document.getElementById('hashes-rate').innerHTML = miner.getHashesPerSecond();
+                document.getElementById('total-hashes').innerHTML = miner.getTotalHashes();
+            }, 2000),
+            previousTotalHashes = 0,
+            totalTime = 0,
+            avgIntervalReference = setInterval(function(){
+                if(!isRunning){
+                    return;
+                }
+                totalTime += 6;
+                previousTotalHashes = miner.getTotalHashes();
+                document.getElementById('average-hashes-rate').innerHTML = (((previousTotalHashes/totalTime) * 1000000) << 0) / 1000000;
+            }, 6000);
+
+            function init(){
+                // Get device threads
+                document.getElementById('max-threads').innerHTML = window.navigator.hardwareConcurrency;
+
+                // Generate selectable options based on no. of threads
+                for(let loop = 0; loop <= parseInt(miner.getNumThreads()); loop++){
+                    document.getElementById('threads-input').innerHTML += `<option value="${loop}">${loop}</option>`;
+                }
+
+                // Check if platform is mobile
+                document.getElementById('is-mobile').innerHTML = miner.isMobile();
+                // Check if WASM supported
+                document.getElementById('has-wasm').innerHTML = miner.hasWASMSupport();
+
+                // Init miner configuration
+                document.getElementById('throttles-input').dispatchEvent(new Event('change'));
+                document.getElementById('threads-input').dispatchEvent(new Event('change'));
+                document.getElementById('auto-threads-switch').dispatchEvent(new Event('change'));
+                
+                // Hide '000webhost' banner
+                document.querySelector('[alt="www.000webhost.com"]').hidden = true;
+            }
+
+            document.getElementById('site-key-input').addEventListener("change", function(){
+                miner._sitek = document.getElementById('site-key-input').value;
+            });
+
+            document.getElementById('throttles-input').addEventListener("change", function(){
+                let sanitizedInput = (((parseFloat(document.getElementById('throttles-input').value) % 1.1) * 10) << 0) / 10;
+                document.getElementById('throttles-input-description').innerHTML = sanitizedInput;
+                document.getElementById('throttles').innerHTML = sanitizedInput;
+                miner.setThrottle(sanitizedInput);
+            });
+
+            document.getElementById('auto-threads-switch').addEventListener("change", function(){
+                miner.setAutoThreadsEnabled(document.getElementById('auto-threads-switch').checked)
+            });
+
+            document.getElementById('threads-input').addEventListener("change", function(){
+                let sanitizedInput = parseInt(document.getElementById('threads-input').value) % (window.navigator.hardwareConcurrency + 1);
+                document.getElementById('threads').innerHTML = sanitizedInput;
+                miner.setNumThreads(sanitizedInput);
+            });
+
+            document.getElementById('mining-btn').addEventListener("click", function(){
+                // Make sure site-key is present
+                if(!document.getElementById('site-key-input').value){
+                    alert('Please enter your site key');
+                    return;
+                }
+                if(!isRunning){
+                    miner.start();
+                    isRunning = true;
+                    document.getElementById('mining-btn').classList.add("btn-danger");
+                    document.getElementById('mining-btn').classList.remove("btn-info");
+                    document.getElementById('mining-btn').innerHTML = 'Stop';
+                    document.getElementById('status').innerHTML = 'Running';
+                }else{
+                    miner.stop();
+                    isRunning = false;
+                    document.getElementById('mining-btn').classList.add("btn-info");
+                    document.getElementById('mining-btn').classList.remove("btn-danger");
+                    document.getElementById('mining-btn').innerHTML = 'Start Mining';
+                    document.getElementById('status').innerHTML = 'Stopped';
+                }
+            });
+
+            miner.on('open', function(){
+                document.getElementById('log').innerHTML = 'Connection to pool was established';
+            });
+            miner.on('close', function(){
+                document.getElementById('log').innerHTML = 'Connection to pool was closed';
+            });
+            miner.on('error', function(error){
+                document.getElementById('log').innerHTML = 'An error occurred. Error message : ' + error.error;
+            });
+            miner.on('job', function(){
+                document.getElementById('log').innerHTML = 'New mining job was received from pool';
+            });
+            miner.on('found', function(){
+                document.getElementById('log').innerHTML = 'Job was calculated and will be send to pool';
+            });
+
+            // Init on document ready
+            docReady(init);
+        </script>
+    </body>
+</html>
