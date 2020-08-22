@@ -1,5 +1,5 @@
 # CoinIMP - MintMe Coin Mining
-### ![#00f7ff](https://via.placeholder.com/15/00f7ff/000000?text=+) Example of MintMe webminer API integration into custom website using CoinIMP
+### ![#00f7ff](https://via.placeholder.com/15/00f7ff/000000?text=+) Example of API integration for MintMe Coin webminer into custom website using CoinIMP as miner service provider
 
 Sample Demo Links :
 <br>https://marcustansoon.000webhostapp.com/Mining/coinimp.html
