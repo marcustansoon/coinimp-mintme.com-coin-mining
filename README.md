@@ -13,7 +13,7 @@ Sample Demo Links :
 </p>
 
 #### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Disclaimer:
-This repository is mainly for demonstration purpose only. Author doesn't affiliated with CoinIMP or any other related platforms
+This repository is mainly for educational purpose only. Author doesn't affiliated with CoinIMP or any other related platforms
 <br>
 
 #### ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Monero Mining Discontinuation: 
