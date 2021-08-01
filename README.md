@@ -3,7 +3,6 @@
 
 
 Sample Demo Links :
-<br>https://marcustansoon.000webhostapp.com/Mining/coinimp.html
 <br>https://raw.githack.com/marcustansoon/coinimp-mintme.com-coin-mining/master/src/index.html
 
 <br>
